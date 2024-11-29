@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:59:59 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/28 15:14:01 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/11/29 16:10:10 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	aux_add_var(char **argv, char *enverement[], int *i, t_cmd *cmd)
 	var = backequal(argv[i[1]]);
 	if (verify_var(var) == -1)
 	{
+		free(var);
 		printf("not a valid identifier\n");
 		return ;
 	}

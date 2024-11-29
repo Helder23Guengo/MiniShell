@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:09:05 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/28 15:27:44 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/11/29 15:58:44 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_join_not_space(char *str, char *c)
 
 	i = 0;
 	j = 0;
-	ret = malloc(ft_strlen(str) + ft_strlen(c) + 3 * sizeof(char ));
+	ret = malloc((ft_strlen(str) + ft_strlen(c) + 3) * sizeof(char ));
 	while (str && str[i])
 	{
 		ret[i] = str[i];
