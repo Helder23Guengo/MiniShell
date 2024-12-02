@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 08:34:37 by eda-mata          #+#    #+#             */
-/*   Updated: 2024/11/29 13:27:46 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 08:58:41 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	reprompt(int sig)
 		rl_on_new_line();
 		rl_replace_line("", 0);
 		fd = open(".status", O_CREAT | O_RDWR, 777);
-		if(fd >=0)
+		if (fd >= 0)
 			write(fd, "130", 3);
 		if (g_sinal == 0)
 			rl_redisplay();

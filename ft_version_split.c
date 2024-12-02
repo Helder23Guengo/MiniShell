@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:59:44 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/29 16:34:23 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 09:53:29 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_expand_var(char *str, int *i, int *status, char **sp)
 		var = getvar(str, &status[0]);
 		if (getenv(var))
 			i[1] = expand(&*sp, getenv(var), i[0], i[1]);
-		if(var)
+		if (var)
 			free(var);
 	}
 }

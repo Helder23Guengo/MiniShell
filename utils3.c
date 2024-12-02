@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 02:18:10 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/28 15:56:17 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 11:48:20 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,28 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	str[i] = '\0';
 	return (str);
+}
+
+int	space_aux(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] && (str[i] == ' ' || str[i] == '	'))
+		i++;
+	if (!str[i])
+		return (1);
+	return (0);
+}
+
+void	main_aux(char *cmd, char **environ, t_ft_dup **ft_dup_raiz)
+{
+	if (ft_verify_comand(cmd) == -1 || sep(cmd, ' ') == -1)
+		printf("syntax error near unexpected token\n");
+	else
+	{
+		if (space_aux(cmd) == 0 && cmd[0])
+			input_param(cmd, environ, &*ft_dup_raiz);
+	}
+	add_history(cmd);
 }

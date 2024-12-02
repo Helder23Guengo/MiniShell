@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 07:57:56 by eda-mata          #+#    #+#             */
-/*   Updated: 2024/11/29 13:27:32 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 11:48:41 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,7 @@ void	ft_close_asp(char *str, int *i, char c)
 {
 	(*i)++;
 	while (str[(*i)] && str[(*i)] != c)
-	{
 		(*i)++;
-	}
-	(*i)++;
 }
 
 int	ft_verify_comand(char *str)
@@ -63,9 +60,9 @@ int	ft_verify_comand(char *str)
 	while (str[i])
 	{
 		if (str[i] == '"' || str[i] == 39)
-		{
 			ft_close_asp(str, &i, str[i]);
-		}
+		if (!str[i])
+			return (-1);
 		if (str[i] && (str[i] == '>' || str[i] == '<'))
 		{
 			c = str[i];
@@ -99,14 +96,7 @@ int	main(void)
 		cmd = readline("prompt% ");
 		if (!cmd)
 			break ;
-		if (ft_verify_comand(cmd) == -1 || sep(cmd, ' ') == -1)
-			printf("syntax error near unexpected token\n");
-		else
-		{
-			if (cmd[0])
-				input_param(cmd, environ, &ft_dup_raiz);
-		}
-		add_history(cmd);
+		main_aux(cmd, environ, &ft_dup_raiz);
 		free(cmd);
 	}
 	printf_dup(ft_dup_raiz);

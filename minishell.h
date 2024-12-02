@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 08:02:20 by eda-mata          #+#    #+#             */
-/*   Updated: 2024/11/28 16:07:37 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 11:43:41 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,4 +145,7 @@ void	ft_exit_130(int sign);
 char	*get_next_line(int fd);
 void	ft_new_dup(t_cmd *cmd, char *str);
 void	ft_trunc_dup(t_ft_dup	*novo, t_ft_dup *last, char *str);
+void	main_aux(char *cmd, char **environ, t_ft_dup **ft_dup_raiz);
+int		space_aux(char *str);
+int		ft_verify_comand(char *str);
 #endif

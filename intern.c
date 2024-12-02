@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:46:00 by eda-mata          #+#    #+#             */
-/*   Updated: 2024/11/28 15:47:16 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 11:18:18 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ void	printecho(int verify, char **argv)
 		return ;
 	if (ft_strcmp(argv[i], "|") == 0)
 		return ;
-	while (((argv[i] != NULL) && ft_strcmp(argv[i], "|") < 0)
-		&& (!(ft_strcmp(argv[i], ">>") == 0)
-			&& !(ft_strcmp(argv[i], ">") == 0)))
+	while ((argv[i] != NULL))
 	{
 		argv[i] = ft_remove_char15(argv[i]);
 		printf("%s", argv[i]);

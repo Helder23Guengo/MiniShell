@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 02:33:01 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/29 16:51:15 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 09:54:05 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,20 @@ char	*ft_get_path(t_cmd *cmd)
 	char	**path;
 	char	*bin;
 	int		i;
-	char *var;
+	char	*var;
 
 	i = 0;
 	path = NULL;
 	if (getenv("PATH"))
 	{
-		var=getenv("PATH");
-		if(var[0])
+		var = getenv("PATH");
+		if (var[0])
 		{
-		path = ft_split_sep(var, ':');
-		bin = find_comand(path, cmd->comand);
+			path = ft_split_sep(var, ':');
+			bin = find_comand(path, cmd->comand);
 		}
 		else
-			bin=NULL;
+			bin = NULL;
 	}
 	else
 		bin = NULL;
