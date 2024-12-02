@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 12:18:31 by eda-mata          #+#    #+#             */
-/*   Updated: 2024/12/02 13:29:24 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:16:57 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,17 @@ char	*find_comand(char **path, char *comand)
 		i++;
 	}
 	return (NULL);
+}
+
+int	verify_bin(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '/' || str[i] == '.')
+	{
+		if (access(str, X_OK) == -1)
+			return (-1);
+	}
+	return (0);
 }

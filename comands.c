@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:15:15 by hguengo           #+#    #+#             */
-/*   Updated: 2024/12/02 13:41:44 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:16:23 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,18 +81,7 @@ int	comands_interns(t_cmd *cmd, char **environ, int *status, int *in_fd)
 	comand_interns1(cmd, status, argv, &i);
 	return (i);
 }
-int	verify_bin(char *str)
-{
-	int	i;
 
-	i = 0;
-	if (str[i] == '/' || str[i] == '.')
-	{
-		if (access(str, X_OK)==-1)
-			return (-1);
-	}
-	return (0);
-}
 void	execute_extern(t_cmd *cmd, char **environ, int *in_fd, char *bin)
 {
 	char	pwd[1024];
@@ -107,7 +96,7 @@ void	execute_extern(t_cmd *cmd, char **environ, int *in_fd, char *bin)
 		printf("%s\n", pwd);
 		exit(0);
 	}
-	else if (bin != NULL && verify_bin(cmd->comand)==0)
+	else if (bin != NULL && verify_bin(cmd->comand) == 0)
 		execute(bin, cmd->parm, environ);
 	else if (access(cmd->comand, X_OK) == 0)
 		execute(cmd->comand, cmd->parm, environ);

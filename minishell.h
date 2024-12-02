@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 08:02:20 by eda-mata          #+#    #+#             */
-/*   Updated: 2024/12/02 13:14:29 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:16:49 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,4 +150,5 @@ int		space_aux(char *str);
 int		ft_verify_comand(char *str);
 int		ft_check_comand(char *str);
 void	ft_close_asp(char *str, int *i, char c);
+int		verify_bin(char *str);
 #endif

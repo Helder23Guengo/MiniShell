@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:33:30 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/28 15:19:01 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:15:10 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	intern2(t_cmd *cmd, int *status, int *in_fd, char *bin)
 		(*status) += comands_extern(cmd, environ, in_fd, bin);
 		if (bin)
 			free(bin);
-		g_sinal = 0;
 	}
 	(*status) = ft_atualizar_status((*status));
 	return ((*status));
