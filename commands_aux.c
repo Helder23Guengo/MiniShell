@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:14:27 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/23 02:15:18 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 13:44:40 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ int	find_var(char *var, char **envirom)
 		free(str);
 		i++;
 	}
-	return (-1);
+	return (i);
 }

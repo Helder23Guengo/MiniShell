@@ -6,7 +6,7 @@
 /*   By: hguengo <hguengo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:46:14 by hguengo           #+#    #+#             */
-/*   Updated: 2024/11/29 16:45:42 by hguengo          ###   ########.fr       */
+/*   Updated: 2024/12/02 13:48:55 by hguengo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_write_split_sep(char *str, char c, int *i)
 	(*i) = 0;
 	sp = malloc((sep(str, c) + 2) * sizeof(char *));
 	while ((*i) < sep(str, c) + 1)
-		sp[(*i)++] = malloc(ft_strlen(str) + 1 * sizeof(char));
+		sp[(*i)++] = malloc(ft_strlen(str) + 2 * sizeof(char));
 	return (sp);
 }
 
